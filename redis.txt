@@ -1,0 +1,70 @@
+# Redis Practice Notes
+
+Today I practiced Redis commands using online Redis playground.  
+These commands helped me understand how Redis stores data in key-value format.
+
+---
+
+## Basic Commands
+
+Set value
+```
+SET username "Shivani"
+```
+
+Get value
+```
+GET username
+```
+
+Delete key
+```
+DEL username
+```
+
+---
+
+## Expiry Example
+
+OTP example
+```
+SET otp 4567
+EXPIRE otp 30
+TTL otp
+```
+
+---
+
+## Counter Example
+
+```
+SET visits 1
+INCR visits
+```
+
+---
+
+## Hash Example
+
+```
+HSET user:1 name Shivani age 21
+HGETALL user:1
+```
+
+---
+
+## List Example
+
+```
+LPUSH tasks "MongoDB practice"
+LPUSH tasks "Redis practice"
+LRANGE tasks 0 -1
+```
+
+---
+
+## What I Learned
+- Redis is very fast because it stores data in memory
+- TTL helps in auto deleting keys
+- Hash works like object
+- List works like stack or queue
